@@ -1,0 +1,63 @@
+[gd_scene load_steps=9 format=3 uid="uid://beqq483gu33ch"]
+
+[ext_resource type="Texture2D" uid="uid://bm3cx1mjba46t" path="res://assets/player/knight/blue/tile000.png" id="1_skdx7"]
+[ext_resource type="Texture2D" uid="uid://dtic2edg1g6tr" path="res://assets/player/knight/blue/tile001.png" id="2_1kkfq"]
+[ext_resource type="Texture2D" uid="uid://dh6ejrqfn33lu" path="res://assets/player/knight/blue/tile002.png" id="3_w6kx4"]
+[ext_resource type="Texture2D" uid="uid://csbve7hynuaeb" path="res://assets/player/knight/blue/tile003.png" id="4_w21dj"]
+[ext_resource type="Texture2D" uid="uid://bdr8pkw2xj2jo" path="res://assets/player/knight/blue/tile004.png" id="5_4nv1y"]
+[ext_resource type="Texture2D" uid="uid://q560y222yrwe" path="res://assets/player/knight/blue/tile005.png" id="6_emnop"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8s30w"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_skdx7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_1kkfq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_w6kx4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_w21dj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_4nv1y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_emnop")
+}],
+"loop": true,
+"name": &"base",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_78jb7"]
+size = Vector2(40, 40)
+
+[node name="Player" type="Area2D"]
+metadata/_edit_group_ = true
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_8s30w")
+animation = &"base"
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": false,
+"output_section": false,
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"layer": "",
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"slice": "",
+"source": "res://assets/player/Warrior_Blue.aseprite"
+}
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+position = Vector2(4, -4)
+shape = SubResource("RectangleShape2D_78jb7")
