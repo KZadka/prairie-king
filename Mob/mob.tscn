@@ -1,10 +1,56 @@
-[gd_scene format=3 uid="uid://l7mqcin4jiwt"]
+[gd_scene load_steps=10 format=3 uid="uid://l7mqcin4jiwt"]
+
+[ext_resource type="Texture2D" uid="uid://8nannwyxqk72" path="res://assets/mob/torch/red/tile000.png" id="1_lx85w"]
+[ext_resource type="Script" path="res://Mob/mob.gd" id="1_yj0yw"]
+[ext_resource type="Texture2D" uid="uid://cpvfui1ixr1ab" path="res://assets/mob/torch/red/tile001.png" id="2_3m7uv"]
+[ext_resource type="Texture2D" uid="uid://b2c8nmmmgquin" path="res://assets/mob/torch/red/tile002.png" id="3_lqr6y"]
+[ext_resource type="Texture2D" uid="uid://c26drjmeilfrw" path="res://assets/mob/torch/red/tile003.png" id="4_8nfel"]
+[ext_resource type="Texture2D" uid="uid://dchc6efd871b7" path="res://assets/mob/torch/red/tile004.png" id="5_ks5er"]
+[ext_resource type="Texture2D" uid="uid://ycy56w7sdbkc" path="res://assets/mob/torch/red/tile005.png" id="6_j0uuk"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pw5km"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_lx85w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_3m7uv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_lqr6y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_8nfel")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ks5er")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_j0uuk")
+}],
+"loop": true,
+"name": &"base",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aodo0"]
+size = Vector2(32, 32)
 
 [node name="Mob" type="RigidBody2D"]
+collision_mask = 0
+gravity_scale = 0.0
+script = ExtResource("1_yj0yw")
 metadata/_edit_group_ = true
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_pw5km")
+animation = &"base"
 
 [node name="Collision" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_aodo0")
 
 [node name="Notifier" type="VisibleOnScreenNotifier2D" parent="."]
+
+[connection signal="screen_exited" from="Notifier" to="." method="_on_notifier_screen_exited"]
