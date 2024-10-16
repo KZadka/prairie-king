@@ -26,6 +26,10 @@ window/vsync/vsync_mode=0
 
 enabled=PackedStringArray("res://addons/godot-vim/plugin.cfg")
 
+[global_group]
+
+player=""
+
 [input]
 
 move_up={
