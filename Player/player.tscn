@@ -35,9 +35,9 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("7_1wwlm")
 }],
-"loop": true,
+"loop": false,
 "name": &"attack",
-"speed": 5.0
+"speed": 7.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -58,7 +58,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("6_emnop")
 }],
-"loop": true,
+"loop": false,
 "name": &"base",
 "speed": 5.0
 }]
@@ -66,14 +66,14 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_78jb7"]
 size = Vector2(40, 40)
 
-[node name="Player" type="Area2D" groups=["player"]]
+[node name="Player" type="CharacterBody2D" groups=["player"]]
 script = ExtResource("1_4wie6")
 metadata/_edit_group_ = true
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_8s30w")
-animation = &"attack"
+animation = &"base"
 metadata/_aseprite_wizard_interface_config_ = {
 "layer_section": false,
 "output_section": false,
@@ -92,5 +92,3 @@ metadata/_aseprite_wizard_config_ = {
 [node name="Collision" type="CollisionShape2D" parent="."]
 position = Vector2(4, -4)
 shape = SubResource("RectangleShape2D_78jb7")
-
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]
