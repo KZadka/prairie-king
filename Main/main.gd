@@ -11,15 +11,13 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
-
 func _on_player_hit() -> void:
-	pass
+	score += 1	
 	
 func new_game():
 	score = 0
 	$Player.start($StartPosition.position)
 	$StartTimer.start()
-
 
 func _on_mob_timer_timeout() -> void:
 	var mob = mob_scene.instantiate()
