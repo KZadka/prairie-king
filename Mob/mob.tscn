@@ -44,7 +44,7 @@ script = ExtResource("1_yj0yw")
 metadata/_edit_group_ = true
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
-scale = Vector2(0.5, 0.5)
+scale = Vector2(0.75, 0.75)
 sprite_frames = SubResource("SpriteFrames_pw5km")
 animation = &"base"
 
