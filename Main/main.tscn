@@ -113,15 +113,12 @@ position = Vector2(360, 360)
 
 [node name="MobSpawn1" type="Marker2D" parent="."]
 position = Vector2(360, 0)
-rotation = 1.5708
 
 [node name="MobSpawn2" type="Marker2D" parent="."]
 position = Vector2(720, 360)
-rotation = 3.14159
 
 [node name="MobSpawn3" type="Marker2D" parent="."]
 position = Vector2(360, 720)
-rotation = 4.71239
 
 [node name="MobSpawn4" type="Marker2D" parent="."]
 position = Vector2(0, 360)
