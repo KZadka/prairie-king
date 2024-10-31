@@ -12,7 +12,8 @@ func _process(delta: float) -> void:
 	pass
 
 func _on_player_hit() -> void:
-	score += 1	
+	pass
+	#score += 1	
 	
 func new_game():
 	score = 0
